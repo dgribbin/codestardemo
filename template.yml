@@ -33,3 +33,19 @@ Resources:
           Properties:
             Path: /
             Method: get
+        Description: ''
+        MemorySize: 128
+  AddService:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: add.handler
+      Runtime: nodejs8.10
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+      Events:
+        AddEvent:
+          Type: Api
+          Properties:
+            Path: /add{x}/{y}
+            Method: get
