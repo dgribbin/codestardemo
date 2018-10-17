@@ -45,5 +45,5 @@ Resources:
         AddEvent:
           Type: Api
           Properties:
-            Path: /add{x}/{y}
+            Path: /add/{x}/{y}
             Method: get
