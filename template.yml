@@ -32,9 +32,7 @@ Resources:
           Type: Api
           Properties:
             Path: /
-            Method: get
-        Description: ''
-        MemorySize: 128
+            Method: get        
   AddService:
     Type: AWS::Serverless::Function
     Properties:
