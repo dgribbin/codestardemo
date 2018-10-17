@@ -5,7 +5,9 @@ function add(x, y) {
 }
 
 exports.handler = function (event, context, cb) {
-    var x = event["x"], y = event["y"];
+    var x = Number(event["pathParameters"],["x"]),
+    y = Number(event["pathParameters"], ["y"]);
+
     var result = add(x, y);
 
     cb(null, {
